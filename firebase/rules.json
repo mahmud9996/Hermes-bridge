@@ -1,0 +1,11 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "hermes_bridge": {
+      "devices":  { "$did": { ".read": "auth != null", ".write": "auth != null", ".validate": "newData.hasChildren(['status','last_seen','platform'])" } },
+      "commands": { "$did": { ".read": "auth != null", ".write": "auth != null", "$id": { ".validate": "newData.hasChildren(['id','type','status','created_at']) && newData.child('type').val().matches(/^(shell|python|file_read|file_write|ping|info)$/)" } } },
+      "results":  { "$did": { ".read": "auth != null", ".write": "auth != null", "$id": { ".validate": "newData.hasChildren(['id','exit_code','done_at']) && newData.child('exit_code').isNumber()" } } }
+    }
+  }
+}

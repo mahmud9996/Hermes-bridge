@@ -1,0 +1,23 @@
+# Hermes Bridge — Cloudflare Wrangler Configuration
+# For CLI deployment (alternative to Dashboard)
+#
+# Usage:
+#   npm install -g wrangler
+#   wrangler login
+#   wrangler kv:namespace create "OAUTH_KV"  ← copy the id below
+#   wrangler secret put FIREBASE_DB_URL
+#   wrangler secret put FIREBASE_SECRET
+#   wrangler secret put DEVICE_ID
+#   wrangler secret put BRIDGE_SECRET
+#   wrangler deploy
+
+name = "hermes-bridge"
+main = "worker.js"
+compatibility_date = "2024-09-23"
+
+# KV namespace for OAuth token storage
+# Create with: wrangler kv:namespace create "OAUTH_KV"
+# Then paste the returned id here:
+[[kv_namespaces]]
+binding = "OAUTH_KV"
+id      = "PASTE_YOUR_KV_NAMESPACE_ID_HERE"

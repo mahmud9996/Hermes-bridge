@@ -1,0 +1,29 @@
+# Credentials — never commit these
+credentials.json
+config.json
+.dev.vars
+*.env
+.env.*
+
+# Logs and runtime
+*.log
+bridge.pid
+_tmp_*.py
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Node / Wrangler
+node_modules/
+.wrangler/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
